@@ -1,0 +1,50 @@
+.sharkSlide {
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    margin-bottom:10px;
+    color:#000;
+    position:relative;
+    background:#CCC;
+}
+
+
+.sharkSlide ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    width:100%;
+    height:auto;
+}
+
+
+.sharkSlide ul li {
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+}
+
+
+.sharkSlide .ctrl {
+    cursor:pointer;
+    position:absolute;
+    top:50%; left:0;
+    z-index:10;
+}
+
+.sharkSlide .ctrl img {
+    position:relative;
+    top:-29px;
+    width:58px;
+    height:58px;
+}
+
+.sharkSlide .ctrl.next_slide {
+    left:auto;
+    right:0;
+}
+
+

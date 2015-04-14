@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Custom Select Box with CSS and jQuery</title>
+<style type="text/css">
+	.select-wrapper{
+		float: left;
+		display: inline-block;
+		border: 1px solid #d8d8d8;            
+		background: url("dropdown-sprite.png") no-repeat right 0 transparent;
+		cursor: pointer;
+	}
+	.select-wrapper, .select-wrapper select{
+		width: 200px;
+		height: 26px;
+		line-height: 26px;
+	}
+	.select-wrapper:hover{
+		background: url("dropdown-sprite.png") no-repeat right -26px transparent;
+		border-color: #239fdb;
+	}
+	.select-wrapper .holder{
+		display: block;
+		margin: 0 35px 0 5px;
+		white-space: nowrap;            
+		overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		z-index: -1;
+	}
+	.select-wrapper select{
+		margin: 0;
+		position: absolute;
+		z-index: 2;            
+		cursor: pointer;
+		outline: none;
+		opacity: 0;
+		/* CSS hacks for older browsers */
+		_noFocusLine: expression(this.hideFocus=true); 
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-khtml-opacity: 0;
+		-moz-opacity: 0;
+	}
+    /* Let's Beautify Our Form */
+	form{
+        margin: 20px;
+    }
+    input[type="submit"]{
+        float: left;
+        background: #d8d8d8;
+        border: 1px solid #c4c4c4;
+        margin-left: 10px;
+        padding: 4px 10px;
+        cursor: pointer;
+        outline: none;
+    }
+    input[type="submit"]:hover{
+        color: #fff;
+        border-color: #1b7aa9;
+        background-color: #239fdb;
+    }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".custom-select").each(function(){
+            $(this).wrap("<span class='select-wrapper'></span>");
+            $(this).after("<span class='holder'></span>");
+        });
+        $(".custom-select").change(function(){
+            var selectedOption = $(this).find(":selected").text();
+            $(this).next(".holder").text(selectedOption);
+        }).trigger('change');
+    })
+</script>
+</head>
+<body>
+    <form action="action.php" method="post">
+        <p>What Is Your Favourite Time Pass:</p>        
+        <select name="timepass" class="custom-select">
+            <option>Select</option>
+            <option>Driving</option>
+            <option>Internet</option>
+            <option>Movie</option>
+            <option>Music</option>
+            <option>Reading</option>
+            <option>Sports</option>                
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

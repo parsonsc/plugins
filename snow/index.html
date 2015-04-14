@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Snow</title>
+</head>
+<body style="background-color:#000000;">
+
+<style>
+.snowfall-flakes {
+  background-image:url(snowflake.png);
+  background-size:cover; z-index:20000;
+}
+</style>
+
+<script src='jquery-1.10.2.min.js'></script>
+<script src='snowfall.jquery.js'></script>
+<script>
+$(document).ready(function(){
+  snow(270,25,3);
+  function snow(snowcount,snowsize,snowspeed){
+    $(document).snowfall({
+      flakeCount : snowcount,
+      minSize : 1,
+      maxSize : snowsize,
+      minSpeed : 10,
+      maxSpeed : snowspeed
+    });
+  }
+});
+</script>
+
+</body>
+</html>

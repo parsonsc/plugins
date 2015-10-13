@@ -1,0 +1,56 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+<style>
+
+
+.wrapper {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  clip: rect(0px, 35px, 36px, 19px);
+  -ms-transform: rotate(90deg); /* IE 9 */
+   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+   transform: rotate(90deg);
+   background: #000;
+}
+.circle {
+    width: 28px;
+  height: 28px;
+  border: 4px solid green;
+  border-radius: 50%;
+  position: absolute;
+  clip: rect(0px, 19px, 63px, 0);
+
+}
+
+div[data-anim~=base] {
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function:infinite linear;
+}
+
+.circle[data-anim~=right] {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: right-spin;
+}
+@-webkit-keyframes right-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-180deg);
+  }
+}
+
+</style>
+</head>
+<body>
+  	<div class="wrapper" data-anim="base wrapper">
+    	<div class="circle" data-anim="base right"></div>
+	</div>
+</body>
+</html>

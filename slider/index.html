@@ -11,10 +11,10 @@ sasa
   <div style="height:200px; background:#FF0000;">1</div>
   <ul>
     <li id="slide_01"><div style="height:200px; background:#FF0000;">1</div></li>
-    <li id="slide_02"><div style="height:200px; background:#FF0000;">2</div></li>
-    <li id="slide_03"><div style="height:200px; background:#FF0000;">3</div></li>
-    <li id="slide_04"><div style="height:200px; background:#FF0000;">4</div></li>
-    <li id="slide_05"><div style="height:200px; background:#FF0000;">5</div></li>
+    <li id="slide_02"><div style="height:200px; background:yellow;">2</div></li>
+    <li id="slide_03"><div style="height:200px; background:blue;">3</div></li>
+    <li id="slide_04"><div style="height:200px; background:green;">4</div></li>
+    <li id="slide_05"><div style="height:200px; background:orange;">5</div></li>
   </ul>
 </div>
 
@@ -27,10 +27,10 @@ $(document).ready( function() {
   $('#slideshow').slideshow({
     height: 200,
     numberOfSlides: 5,
-    speed: 800,
-    slideMethod: "fade",
+    speed: 1800,
+
     auto: true,
-    autoDelay: 2000,
+    autoDelay: 20000,
     initialSlide: 1
   });
 
